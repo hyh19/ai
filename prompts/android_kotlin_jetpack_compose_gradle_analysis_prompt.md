@@ -19,22 +19,31 @@
 ## 目录和文件结构
 
 - **任务**：分析并整理 Android 项目的目录和文件结构。
-- **输出格式**：
-  - 使用 ASCII 树形图（类似命令行 `tree` 工具的输出）展示项目的目录结构。
-  - **直接在树形图中**使用注释符号（`#`）在相应目录或文件后面添加简要说明，参考以下示例格式:
-
-    ```plaintext
-    app/
-    ├── src/
-    │   ├── androidTest/     # Android 测试代码
-    │   │   └── java/
-    │   │       └── com/example/myapp/
-    │   │           └── ExampleTest.kt      # 主要测试用例
-    ```
-
+- **分析要点**：
+  - **从项目根目录开始**，列出所有子目录和文件（除 `.gitignore` 中排除的内容外）。
   - 特别关注 Kotlin 源文件组织方式和 Compose UI 相关文件的分布。
   - 分析 Compose 预览函数的使用和组织情况。
   - 检查 Gradle 模块化结构和依赖管理策略。
+  - 注意 Gradle 配置文件，特别是 `build.gradle`（或 `.kts` 文件）、`gradle.properties`、`settings.gradle` 和 `gradle-wrapper.properties`。
+- **输出格式**：
+  - 使用 ASCII 树形图（类似命令行 `tree` 工具的输出）展示项目的**完整**目录结构。
+  - **直接在树形图中**使用注释符号（`#`）在相应目录或文件后面添加简要说明，参考以下示例格式:
+
+    ```plaintext
+    ProjectRoot/                            # 项目根目录
+    ├── app/                                # 应用主模块
+    │   ├── src/                            # 源代码目录
+    │   │   ├── androidTest/                # Android 测试代码
+    │   │   └── main/                       # 主要源代码
+    ├── build.gradle                        # 项目级构建脚本
+    ├── settings.gradle                     # 项目设置脚本
+    ├── gradle.properties                   # Gradle 属性配置
+    └── gradle/                             # Gradle 包装器
+        └── wrapper/                        # Gradle 包装器配置
+            └── gradle-wrapper.properties   # Gradle 版本配置
+    ```
+
+  - **必须为每个目录和文件**添加简要说明，说明其用途和作用。
   - **注意**：忽略 `.gitignore` 文件中列出的目录和文件。
 
 ## 分层架构分析
@@ -53,7 +62,22 @@
   - 评估 Compose 动画和过渡效果的实现方式。
 - **输出格式**：
   - 使用 ASCII 树形图（类似命令行 `tree` 工具的输出）展示界面层的组件结构。
-  - 对每个主要 Composable 组件的功能和关系进行简要说明。
+  - **直接在树形图中**使用注释符号（`#`）在相应 UI 组件后面添加简要说明，与目录和文件结构的格式保持一致。
+  - **必须为每个 UI 组件**添加简要说明，说明其功能、职责和设计要点。
+  - 示例格式：
+  
+    ```plaintext
+    NavActivity                                  # 主导航活动，应用入口点
+    ├── TopLevelScaffold                         # 顶层脚手架，提供基本布局结构
+    │   ├── AppBar                               # 应用栏，显示标题和菜单
+    │   ├── NavigationRail                       # 导航栏，用于大屏幕导航
+    │   └── BottomNavigation                     # 底部导航栏，用于小屏幕导航
+    └── NavHost                                  # 导航宿主，管理导航目标
+        ├── HomeScreen                           # 主页屏幕，显示内容摘要
+        │   └── ContentList                      # 内容列表，可滚动
+        └── DetailScreen                         # 详情屏幕，显示完整内容
+    ```
+  
   - 提供界面层与业务层的交互方式说明。
   - 分析组件之间的状态共享和传递方式。
 
@@ -162,100 +186,108 @@
 ### 目录和文件结构
 
 ```plaintext
-app/
-├── src/
-│   ├── androidTest/     # Android 测试代码
-│   │   └── java/
-│   │       └── com/
-│   │           └── example/
-│   │               └── myapp/
-│   │                   └── ExampleInstrumentedTest.kt      # UI 自动化测试
-│   ├── main/
-│   │   ├── java/
-│   │   │   └── com/
-│   │   │       └── example/
-│   │   │           └── myapp/
-│   │   │               ├── MainActivity.kt                 # 应用主入口
-│   │   │               ├── ui/                             # UI 相关代码
-│   │   │               │   ├── components/                 # 可复用组件
-│   │   │               │   │   ├── AppBar.kt              # 顶部应用栏
-│   │   │               │   │   └── CommonUI.kt            # 通用 UI 元素
-│   │   │               │   ├── screens/                    # 屏幕级组件
-│   │   │               │   │   ├── HomeScreen.kt          # 首页屏幕
-│   │   │               │   │   └── DetailScreen.kt        # 详情屏幕
-│   │   │               │   └── theme/                      # 主题定义
-│   │   │               │       ├── Color.kt               # 颜色定义
-│   │   │               │       ├── Theme.kt               # 主题配置
-│   │   │               │       └── Type.kt                # 字体排版
-│   │   │               ├── domain/                         # 业务域相关代码
-│   │   │               │   ├── model/                      # 业务模型
-│   │   │               │   │   └── AppModels.kt           # 应用数据模型
-│   │   │               │   ├── usecase/                    # 用例定义
-│   │   │               │   │   └── AppUseCases.kt         # 业务用例实现
-│   │   │               │   └── viewmodel/                  # 视图模型
-│   │   │               │       ├── HomeViewModel.kt       # 首页视图模型
-│   │   │               │       └── DetailViewModel.kt     # 详情视图模型
-│   │   │               └── data/                           # 数据层代码
-│   │   │                   ├── repository/                 # 仓库模式实现
-│   │   │                   │   └── AppRepository.kt       # 应用数据仓库
-│   │   │                   ├── source/                     # 数据源
-│   │   │                   │   ├── local/                  # 本地数据源
-│   │   │                   │   │   └── LocalDataSource.kt # 本地存储实现
-│   │   │                   │   └── remote/                 # 远程数据源
-│   │   │                   │       └── RemoteDataSource.kt # API 请求实现
-│   │   │                   └── model/                      # 数据模型
-│   │   │                       ├── ApiModels.kt           # API 响应模型
-│   │   │                       └── DbModels.kt            # 数据库实体模型
-│   │   ├── res/                                            # 资源文件
-│   │   │   ├── drawable/                                   # 图像资源
-│   │   │   ├── mipmap/                                     # 应用图标
-│   │   │   ├── values/                                     # 值资源
-│   │   │   │   ├── colors.xml                             # 颜色定义
-│   │   │   │   ├── strings.xml                            # 字符串资源
-│   │   │   │   └── themes.xml                             # XML 主题定义
-│   │   │   └── navigation/                                 # 导航配置
-│   │   │       └── nav_graph.xml                          # 导航图定义
-│   │   └── AndroidManifest.xml                             # 应用清单
-│   └── test/                                                # 单元测试
-│       └── java/
-│           └── com/
-│               └── example/
-│                   └── myapp/
-│                       └── ExampleUnitTest.kt              # 单元测试示例
-├── build.gradle.kts                                         # 模块构建脚本
-└── proguard-rules.pro                                       # 混淆规则
+ProjectRoot/                                     # 项目根目录
+├── app/                                         # 应用主模块
+│   ├── build/                                   # 构建输出目录
+│   ├── libs/                                    # 本地依赖库
+│   ├── src/                                     # 源代码目录
+│   │   ├── androidTest/                         # Android 测试代码
+│   │   │   ├── java/                            # 测试源码
+│   │   │   │   └── com/example/myapp/           # 测试包结构
+│   │   │   │       ├── ConversationTest.kt      # 会话界面测试
+│   │   │   │       ├── NavigationTest.kt        # 导航功能测试
+│   │   │   │       └── UserInputTest.kt         # 用户输入测试
+│   │   │   └── AndroidManifest.xml              # 测试清单文件
+│   │   ├── main/                                # 主要源代码
+│   │   │   ├── java/                            # Kotlin/Java 源码
+│   │   │   │   └── com/example/myapp/           # 包结构
+│   │   │   │       ├── MainActivity.kt          # 应用主入口
+│   │   │   │       ├── ui/                      # UI 相关代码
+│   │   │   │       │   ├── components/          # 可复用组件
+│   │   │   │       │   │   ├── AppBar.kt        # 顶部应用栏
+│   │   │   │       │   │   └── CommonUI.kt      # 通用 UI 元素
+│   │   │   │       │   ├── screens/             # 屏幕级组件
+│   │   │   │       │   │   ├── HomeScreen.kt    # 首页屏幕
+│   │   │   │       │   │   └── DetailScreen.kt  # 详情屏幕
+│   │   │   │       │   └── theme/               # 主题定义
+│   │   │   │       │       ├── Color.kt         # 颜色定义
+│   │   │   │       │       ├── Theme.kt         # 主题配置
+│   │   │   │       │       └── Type.kt          # 字体排版
+│   │   │   │       ├── domain/                  # 业务域相关代码
+│   │   │   │       │   ├── model/               # 业务模型
+│   │   │   │       │   ├── usecase/             # 用例定义
+│   │   │   │       │   └── viewmodel/           # 视图模型
+│   │   │   │       └── data/                    # 数据层代码
+│   │   │   │           ├── repository/          # 仓库模式实现
+│   │   │   │           ├── source/              # 数据源
+│   │   │   │           └── model/               # 数据模型
+│   │   │   ├── res/                             # 资源文件
+│   │   │   │   ├── drawable/                    # 图像资源
+│   │   │   │   ├── mipmap/                      # 应用图标
+│   │   │   │   ├── layout/                      # XML 布局文件
+│   │   │   │   ├── values/                      # 值资源
+│   │   │   │   │   ├── colors.xml               # 颜色定义
+│   │   │   │   │   ├── strings.xml              # 字符串资源
+│   │   │   │   │   └── themes.xml               # XML 主题定义
+│   │   │   │   └── navigation/                  # 导航配置
+│   │   │   │       └── nav_graph.xml            # 导航图定义
+│   │   │   └── AndroidManifest.xml              # 应用清单
+│   │   └── test/                                # 单元测试
+│   │       └── java/                            # 测试源码
+│   │           └── com/example/myapp/           # 测试包结构
+│   │               ├── ExampleUnitTest.kt       # 基本单元测试
+│   │               ├── viewmodel/               # ViewModel 测试
+│   │               └── repository/              # 仓库测试
+│   ├── build.gradle.kts                         # 模块构建脚本
+│   └── proguard-rules.pro                       # 混淆规则
+├── build.gradle.kts                             # 项目级构建脚本
+├── gradle.properties                            # Gradle 属性配置
+├── gradle/                                      # Gradle 包装器
+│   └── wrapper/                                 # Gradle 包装器配置
+│       ├── gradle-wrapper.jar                   # Gradle 包装器 JAR
+│       └── gradle-wrapper.properties            # Gradle 版本配置
+├── gradlew                                      # Unix Gradle 启动脚本
+├── gradlew.bat                                  # Windows Gradle 启动脚本
+├── settings.gradle.kts                          # 项目设置脚本
+├── local.properties                             # 本地SDK路径配置
+└── libs.versions.toml                           # 版本目录（依赖版本管理）
 ```
 
-**注意**：以上只是示例结构，实际项目结构可能有所不同。请根据实际项目进行分析和整理。
+**注意**：
 
-### 界面层组件结构
+- 以上是一个典型的 Android 项目结构示例，实际项目可能根据具体需求有所不同。
+- 请确保列出项目中的所有目录和文件，并添加适当的说明。
+- 对于较大的项目，可能需要折叠一些次要的目录以保持输出的可读性。
+
+### 分层架构分析
+
+#### 界面层组件结构
 
 ```plaintext
-MainActivity
-├── AppScaffold                    # 应用基础脚手架
-│   ├── AppTopBar                  # 顶部工具栏
-│   └── NavHost                    # 导航宿主
-│       ├── HomeScreen             # 主页屏幕
-│       │   ├── HeaderSection      # 顶部标题区域
-│       │   ├── ContentList        # 内容列表区域
-│       │   │   └── ContentItem    # 单个内容项
-│       │   └── BottomActions      # 底部操作按钮
-│       └── DetailScreen           # 详情屏幕
-│           ├── DetailHeader       # 详情页头部
-│           ├── DetailContent      # 详情页内容
-│           └── ActionButtons      # 操作按钮组
-└── AppDrawer                      # 应用抽屉菜单
+MainActivity                                  # 应用的主活动，程序入口点
+├── AppScaffold                               # 应用基础脚手架，提供基本布局结构
+│   ├── AppTopBar                             # 顶部工具栏，显示标题和操作按钮
+│   └── NavHost                               # 导航宿主，管理屏幕之间的切换
+│       ├── HomeScreen                        # 主页屏幕，应用首页内容
+│       │   ├── HeaderSection                 # 顶部标题区域，显示页面标题和摘要
+│       │   ├── ContentList                   # 内容列表区域，展示可滚动内容
+│       │   │   └── ContentItem               # 单个内容项，列表的基本单位
+│       │   └── BottomActions                 # 底部操作按钮，如添加、刷新等
+│       └── DetailScreen                      # 详情屏幕，展示项目完整信息
+│           ├── DetailHeader                  # 详情页头部，显示主要信息和图片
+│           ├── DetailContent                 # 详情页内容，显示完整描述
+│           └── ActionButtons                 # 操作按钮组，如分享、编辑、删除等
+└── AppDrawer                                 # 应用抽屉菜单，包含导航选项和设置
 ```
 
-**说明**：
+**界面层与业务层交互方式**：
 
-- `MainActivity`：应用的主活动，通常是程序入口点。
-- `AppScaffold`：应用的基础脚手架组件，提供基本布局结构。
-- `NavHost`：导航宿主，负责管理不同屏幕之间的导航。
-- `HomeScreen`：主页屏幕，通常是应用的首页。
-- `DetailScreen`：详情屏幕，用于显示项目的详细信息。
+- UI 组件通过 ViewModel 获取状态并显示
+- 用户交互通过事件被传递到 ViewModel 处理
+- 使用 `collectAsState()` 将 Flow 转换为 Compose 状态
+- 状态变更触发 UI 重组，实现响应式更新
 
-### 业务层流程图
+#### 业务层流程图
 
 ```mermaid
 graph LR;
@@ -277,7 +309,7 @@ graph LR;
 - UseCase 通过 Repository 访问数据。
 - 数据处理完成后，更新 UI 状态，触发界面重组。
 
-### 数据层关系图
+#### 数据层关系图
 
 ```mermaid
 graph TD;
@@ -311,6 +343,105 @@ graph TD;
 | **依赖注入** | Hilt | 依赖注入库 | [https://github.com/google/dagger](https://github.com/google/dagger) |
 | **异步处理** | Kotlin Coroutines | 协程库 | [https://github.com/Kotlin/kotlinx.coroutines](https://github.com/Kotlin/kotlinx.coroutines) |
 | **状态管理** | StateFlow | 响应式编程 | [https://github.com/Kotlin/kotlinx.coroutines](https://github.com/Kotlin/kotlinx.coroutines) |
+
+### Gradle 构建系统分析
+
+#### Gradle 和插件版本
+
+| 名称 | 版本 | 配置文件 | 说明 |
+|------|------|----------|------|
+| Gradle | 8.2.0 | gradle-wrapper.properties | 基础构建工具，负责整个构建流程 |
+| Android Gradle Plugin | 8.1.0 | libs.versions.toml | Android 专用构建插件，提供 Android 特定的构建功能 |
+| Kotlin Gradle Plugin | 1.9.0 | libs.versions.toml | Kotlin 语言支持插件，启用 Kotlin 编译 |
+| Compose Compiler | 1.5.1 | libs.versions.toml | Compose 编译优化插件 |
+
+#### 依赖管理
+
+```kotlin
+// Version Catalog (libs.versions.toml)
+[versions]
+compose = "1.5.0"
+compose-compiler = "1.5.1"
+kotlin = "1.9.0"
+androidx-core = "1.10.1"
+
+[libraries]
+androidx-compose-ui = { module = "androidx.compose.ui:ui", version.ref = "compose" }
+androidx-compose-material3 = { module = "androidx.compose.material3:material3", version = "1.1.1" }
+kotlin-stdlib = { module = "org.jetbrains.kotlin:kotlin-stdlib", version.ref = "kotlin" }
+
+// build.gradle.kts 使用方式
+dependencies {
+    implementation(libs.androidx.compose.ui)
+    implementation(libs.androidx.compose.material3)
+}
+```
+
+#### 构建配置
+
+```kotlin
+// app/build.gradle.kts
+android {
+    namespace = "com.example.myapp"
+    compileSdk = 34
+    
+    defaultConfig {
+        applicationId = "com.example.myapp"
+        minSdk = 24
+        targetSdk = 34
+        versionCode = 1
+        versionName = "1.0"
+    }
+    
+    buildTypes {
+        release {
+            isMinifyEnabled = true
+            proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
+        }
+        debug {
+            applicationIdSuffix = ".debug"
+            isDebuggable = true
+        }
+    }
+    
+    buildFeatures {
+        compose = true
+    }
+    
+    composeOptions {
+        kotlinCompilerExtensionVersion = libs.versions.compose.compiler.get()
+    }
+    
+    kotlinOptions {
+        jvmTarget = "17"
+        freeCompilerArgs += listOf("-opt-in=kotlin.RequiresOptIn")
+    }
+}
+```
+
+#### 性能优化配置
+
+```properties
+# gradle.properties
+org.gradle.parallel=true
+org.gradle.caching=true
+org.gradle.configureondemand=true
+org.gradle.jvmargs=-Xmx3g -XX:MaxMetaspaceSize=1g
+android.useAndroidX=true
+android.enableJetifier=false
+kotlin.incremental=true
+kotlin.incremental.js=true
+kotlin.code.style=official
+```
+
+**构建系统优化建议**：
+
+- 使用 Version Catalog 集中管理依赖版本
+- 开启 Gradle 并行构建、缓存和按需配置
+- 配置适当的 JVM 内存参数以加速构建
+- 启用 Compose 编译器报告功能以优化重组性能
+- 分析并移除未使用的依赖项
+- 考虑使用组合构建以加速开发周期
 
 ### 项目构建与运行命令
 
