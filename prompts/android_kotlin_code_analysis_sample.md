@@ -1,9 +1,9 @@
-# ExampleViewModel.kt 代码分析
+# `ExampleViewModel.kt` 代码分析
 
 ## 1. 文件基本信息
 
-- **文件名称**：ExampleViewModel.kt
-- **文件路径**：app/src/main/java/com/example/myapp/ui/example/ExampleViewModel.kt
+- **文件名称**：`ExampleViewModel.kt`
+- **文件路径**：`app/src/main/java/com/example/myapp/ui/example/ExampleViewModel.kt`
 - **主要功能**：管理示例屏幕的 UI 状态和用户交互，处理数据加载和状态转换
 - **技术要点**：ViewModel、StateFlow、协程、依赖注入
 
@@ -11,7 +11,7 @@
 
 ### 2.1 界面层（UI Layer）
 
-此文件作为 UI 层与业务层之间的桥梁，主要负责为 ExampleScreen.kt 提供状态数据
+此文件作为 UI 层与业务层之间的桥梁，主要负责为 `ExampleScreen.kt` 提供状态数据
 
 - **组件结构**：
 
