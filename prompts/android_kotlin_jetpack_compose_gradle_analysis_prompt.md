@@ -390,9 +390,9 @@ adb devices
   * 文档须遵循严格的 Markdown 规范和中文排版规范。
   * 文档应包含清晰的标题层级、格式统一的列表和适当的代码块标注。
 * **格式规范**：
-  * 遵循 [Markdown Lint 规则](https://raw.githubusercontent.com/hyh19/cursor-rules/refs/heads/master/markdown-lint.md) 描述的格式标准。
-  * 遵循 [中文文案排版规范](https://raw.githubusercontent.com/hyh19/cursor-rules/refs/heads/master/chinese-typography.md) 进行中英文混排。
+  * 遵循 [Markdown Lint 规则](https://raw.githubusercontent.com/hyh19/ai/refs/heads/master/cursor-rules/markdown-lint.md) 描述的格式标准。
+  * 遵循 [中文文案排版规范](https://raw.githubusercontent.com/hyh19/ai/refs/heads/master/cursor-rules/chinese-typography.md) 进行中英文混排。
   * 正确处理中英文之间的空格、标点符号使用和代码与文本混排。
 * **参考资料**：
-  * Markdown Lint 规则: [https://raw.githubusercontent.com/hyh19/cursor-rules/refs/heads/master/markdown-lint.md](https://raw.githubusercontent.com/hyh19/cursor-rules/refs/heads/master/markdown-lint.md)
-  * 中文文案排版规范: [https://raw.githubusercontent.com/hyh19/cursor-rules/refs/heads/master/chinese-typography.md](https://raw.githubusercontent.com/hyh19/cursor-rules/refs/heads/master/chinese-typography.md)
+  * Markdown Lint 规则: [https://raw.githubusercontent.com/hyh19/ai/refs/heads/master/cursor-rules/markdown-lint.md](https://raw.githubusercontent.com/hyh19/ai/refs/heads/master/cursor-rules/markdown-lint.md)
+  * 中文文案排版规范: [https://raw.githubusercontent.com/hyh19/ai/refs/heads/master/cursor-rules/chinese-typography.md](https://raw.githubusercontent.com/hyh19/ai/refs/heads/master/cursor-rules/chinese-typography.md)
