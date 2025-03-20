@@ -29,17 +29,19 @@
   - 标注生命周期相关方法
   - 标注 `@Deprecated` 的方法
 - **内部类/嵌套类**：说明重要的内部类及其用途
-- **类图**：使用 Mermaid 语法绘制类的 UML 图，展示继承关系、主要属性和方法
+- **类图**：使用 Mermaid 语法绘制类的 UML 图，展示继承关系、主要属性和方法。请确保遵循从上到下的继承结构（父类/接口在上方，子类/实现类在下方），并在关系箭头上添加说明文字（如"继承"、"实现"、"关联"、"组合"、"聚合"等）
 
 ```mermaid
 classDiagram
+    class ParentClass
+    class Interface
     class ApiName {
         -privateProperty: Type
         +publicProperty: Type
         +method(param: Type): ReturnType
     }
-    ApiName --|> ParentClass
-    ApiName ..|> Interface
+    ParentClass <|-- ApiName : 继承
+    Interface <|.. ApiName : 实现
 ```
 
 #### 2.2 接口（Interface）解析
@@ -49,7 +51,7 @@ classDiagram
 - **抽象方法**：详细说明接口定义的抽象方法
 - **默认方法**：解析接口提供的默认实现
 - **属性**：说明接口定义的属性
-- **接口图**：使用 Mermaid 语法绘制接口的 UML 图
+- **接口图**：使用 Mermaid 语法绘制接口的 UML 图，若有继承关系，请确保遵循从上到下的结构（父接口在上方，子接口在下方），并在关系箭头上添加说明文字（如"继承"、"扩展"等）
 
 #### 2.3 函数解析
 
@@ -76,7 +78,7 @@ flowchart TD
 - **枚举值**：列出所有枚举值及其含义
 - **方法**：说明枚举类中定义的方法
 - **使用场景**：列举常见使用场景
-- **枚举图**：使用 Mermaid 语法绘制枚举关系图
+- **枚举图**：使用 Mermaid 语法绘制枚举关系图，若有继承或实现关系，请确保遵循从上到下的结构，并在关系箭头上添加说明文字
 
 ```mermaid
 classDiagram
@@ -94,7 +96,7 @@ classDiagram
 - **元注解**：列出该注解上使用的元注解（如 `@Retention`, `@Target`）
 - **属性**：解析注解的属性及其含义
 - **使用场景**：说明典型使用场景
-- **注解图**：使用 Mermaid 语法绘制注解结构图
+- **注解图**：使用 Mermaid 语法绘制注解结构图，若有继承或实现关系，请确保遵循从上到下的结构，并在关系箭头上添加说明文字
 
 ```mermaid
 classDiagram
@@ -110,15 +112,15 @@ classDiagram
 - **触发条件**：详述导致该异常的典型情况
 - **异常属性**：解析异常类中的属性
 - **处理方法**：提供异常处理的最佳实践
-- **异常图**：使用 Mermaid 语法绘制异常继承图
+- **异常图**：使用 Mermaid 语法绘制异常继承图，请确保遵循从上到下的继承结构（父类在上方，子类在下方），并在关系箭头上添加"继承"说明文字
 
 ```mermaid
 classDiagram
     class Exception
     class RuntimeException
     class CustomException
-    Exception <|-- RuntimeException
-    RuntimeException <|-- CustomException
+    Exception <|-- RuntimeException : 继承
+    RuntimeException <|-- CustomException : 继承
 ```
 
 ### 3. 代码示例
@@ -189,7 +191,7 @@ classDiagram
 
     ### 2.1 核心功能
 
-    RecyclerView 是一个灵活的视图组件，用于高效显示大量数据集。它通过回收和复用视图holders来优化滚动性能，是 ListView 的更强大替代品。
+    RecyclerView 是一个灵活的视图组件，用于高效显示大量数据集。它通过回收和复用视图 holders 来优化滚动性能，是 ListView 的更强大替代品。
 
     ### 2.2 使用场景
 
@@ -201,34 +203,41 @@ classDiagram
     ### 2.3 主要组件关系
 
     ```mermaid
-        classDiagram
-            class RecyclerView {
-                +setAdapter(adapter: Adapter): void
-                +setLayoutManager(layout: LayoutManager): void
-                +addItemDecoration(decor: ItemDecoration): void
-                +scrollToPosition(position: int): void
-                +smoothScrollToPosition(position: int): void
-            }
-            
-            class Adapter {
-                +onCreateViewHolder(parent: ViewGroup, viewType: int): ViewHolder
-                +onBindViewHolder(holder: ViewHolder, position: int): void
-                +getItemCount(): int
-            }
-            
-            class ViewHolder {
-                +itemView: View
-                +getAdapterPosition(): int
-            }
-            
-            class LayoutManager {
-                +canScrollVertically(): boolean
-                +canScrollHorizontally(): boolean
-            }
-            
-            RecyclerView --> Adapter
-            RecyclerView --> LayoutManager
-            Adapter --> ViewHolder
+    classDiagram
+        class View
+        
+        class ViewGroup {
+        }
+        
+        class RecyclerView {
+            +setAdapter(adapter: Adapter): void
+            +setLayoutManager(layout: LayoutManager): void
+            +addItemDecoration(decor: ItemDecoration): void
+            +scrollToPosition(position: int): void
+            +smoothScrollToPosition(position: int): void
+        }
+        
+        class Adapter {
+            +onCreateViewHolder(parent: ViewGroup, viewType: int): ViewHolder
+            +onBindViewHolder(holder: ViewHolder, position: int): void
+            +getItemCount(): int
+        }
+        
+        class ViewHolder {
+            +itemView: View
+            +getAdapterPosition(): int
+        }
+        
+        class LayoutManager {
+            +canScrollVertically(): boolean
+            +canScrollHorizontally(): boolean
+        }
+        
+        View <|-- ViewGroup : 继承
+        ViewGroup <|-- RecyclerView : 继承
+        RecyclerView --> Adapter : 关联
+        RecyclerView --> LayoutManager : 关联
+        Adapter --> ViewHolder : 创建和使用
     ```
 
     ## 3. 代码示例

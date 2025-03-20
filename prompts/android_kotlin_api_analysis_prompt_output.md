@@ -12,7 +12,7 @@
 
 ### 2.1 核心功能
 
-RecyclerView 是一个灵活的视图组件，用于高效显示大量数据集。它通过回收和复用视图holders来优化滚动性能，是 ListView 的更强大替代品。
+RecyclerView 是一个灵活的视图组件，用于高效显示大量数据集。它通过回收和复用视图 holders 来优化滚动性能，是 ListView 的更强大替代品。
 
 ### 2.2 使用场景
 
@@ -24,34 +24,41 @@ RecyclerView 是一个灵活的视图组件，用于高效显示大量数据集�
 ### 2.3 主要组件关系
 
 ```mermaid
-    classDiagram
-        class RecyclerView {
-            +setAdapter(adapter: Adapter): void
-            +setLayoutManager(layout: LayoutManager): void
-            +addItemDecoration(decor: ItemDecoration): void
-            +scrollToPosition(position: int): void
-            +smoothScrollToPosition(position: int): void
-        }
-        
-        class Adapter {
-            +onCreateViewHolder(parent: ViewGroup, viewType: int): ViewHolder
-            +onBindViewHolder(holder: ViewHolder, position: int): void
-            +getItemCount(): int
-        }
-        
-        class ViewHolder {
-            +itemView: View
-            +getAdapterPosition(): int
-        }
-        
-        class LayoutManager {
-            +canScrollVertically(): boolean
-            +canScrollHorizontally(): boolean
-        }
-        
-        RecyclerView --> Adapter
-        RecyclerView --> LayoutManager
-        Adapter --> ViewHolder
+classDiagram
+    class View
+    
+    class ViewGroup {
+    }
+    
+    class RecyclerView {
+        +setAdapter(adapter: Adapter): void
+        +setLayoutManager(layout: LayoutManager): void
+        +addItemDecoration(decor: ItemDecoration): void
+        +scrollToPosition(position: int): void
+        +smoothScrollToPosition(position: int): void
+    }
+    
+    class Adapter {
+        +onCreateViewHolder(parent: ViewGroup, viewType: int): ViewHolder
+        +onBindViewHolder(holder: ViewHolder, position: int): void
+        +getItemCount(): int
+    }
+    
+    class ViewHolder {
+        +itemView: View
+        +getAdapterPosition(): int
+    }
+    
+    class LayoutManager {
+        +canScrollVertically(): boolean
+        +canScrollHorizontally(): boolean
+    }
+    
+    View <|-- ViewGroup : 继承
+    ViewGroup <|-- RecyclerView : 继承
+    RecyclerView --> Adapter : 关联
+    RecyclerView --> LayoutManager : 关联
+    Adapter --> ViewHolder : 创建和使用
 ```
 
 ## 3. 代码示例
