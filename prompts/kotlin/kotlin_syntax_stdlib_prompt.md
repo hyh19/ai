@@ -1,4 +1,4 @@
-# Kotlin 语法和标准库 API 讲解指南
+# Kotlin 语法和标准库 API 讲解要求
 
 ## 目标
 
