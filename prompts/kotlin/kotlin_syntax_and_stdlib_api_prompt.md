@@ -66,3 +66,15 @@
 - 内容应适合不同经验水平的 Kotlin 开发者阅读理解
 - 确保代码符合 Kotlin 官方代码风格规范
 - 所有示例代码应遵循最新的 Kotlin 编程实践
+
+## 参考示例
+
+参考下面的格式提供讲解：
+
+```kotlin
+// 这里可能会包含一个简单的示例代码，展示如何提供详细注释
+fun example(param: String): Result<Int> {
+    // 详细解释这行代码的作用
+    return Result.success(param.length)
+}
+```
