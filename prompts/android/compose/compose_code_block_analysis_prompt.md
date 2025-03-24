@@ -1,4 +1,4 @@
-# Jetpack Compose 代码块分析 Prompt
+# Jetpack Compose 代码块分析要求
 
 ## 目标
 

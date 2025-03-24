@@ -1,4 +1,4 @@
-# Jetpack Compose 组件分析 Prompt
+# Jetpack Compose 组件分析要求
 
 ## 1. 基本信息
 
