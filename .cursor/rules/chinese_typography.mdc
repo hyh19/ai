@@ -199,8 +199,8 @@ alwaysApply: true
 
 ## 参考资料
 
-- [中文文案排版指北](https://github.com/sparanoid/chinese-copywriting-guidelines)
-- [中文写作排版风格指南](https://github.com/RightCapitalHQ/chinese-style-guide)
-- [中文技术文档的写作规范](https://github.com/ruanyf/document-style-guide)
-- [写给大家看的中文排版指南](https://zhuanlan.zhihu.com/p/20506092)
-- [Google 开发者文档风格指南](https://developers.google.com/style/chinese-language)
+- [中文文案排版指北](mdc:https:/github.com/sparanoid/chinese-copywriting-guidelines)
+- [中文写作排版风格指南](mdc:https:/github.com/RightCapitalHQ/chinese-style-guide)
+- [中文技术文档的写作规范](mdc:https:/github.com/ruanyf/document-style-guide)
+- [写给大家看的中文排版指南](mdc:https:/zhuanlan.zhihu.com/p/20506092)
+- [Google 开发者文档风格指南](mdc:https:/developers.google.com/style/chinese-language)

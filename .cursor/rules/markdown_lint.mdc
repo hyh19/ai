@@ -80,6 +80,6 @@ def hello_world():
 
 ## 参考
 
-- [markdownlint 规则详情](https://github.com/DavidAnson/markdownlint/blob/main/doc/Rules.md)
-- [Markdown 语法指南](https://www.markdownguide.org)
-- [GitHub Markdown 指南](https://docs.github.com/cn/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)
+- [markdownlint 规则详情](mdc:https:/github.com/DavidAnson/markdownlint/blob/main/doc/Rules.md)
+- [Markdown 语法指南](mdc:https:/www.markdownguide.org)
+- [GitHub Markdown 指南](mdc:https:/docs.github.com/cn/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)
