@@ -1,9 +1,9 @@
 ---
-description: 指导 AI 将 Kotlin 英文技术文章翻译成专业、准确、术语一致的中文技术文档，适用于中文开发者阅读
+description: 翻译 Kotlin 英文文章的指令
 globs:
 alwaysApply: false
 ---
-<!-- modified: 2025-03-27 19:37 -->
+<!-- modified: 2025-03-27 19:46 -->
 # Kotlin 英文文章翻译指令
 
 ## 任务描述
