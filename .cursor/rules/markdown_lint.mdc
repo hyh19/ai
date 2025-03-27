@@ -1,6 +1,6 @@
 ---
-description: 确保所有 Markdown 文档严格遵循 markdownlint 规范
-globs: ["**/*.md"]
+description: 确保所有 Markdown 文档严格遵循 markdownlint 规范，提高文档质量和一致性
+globs: **/*.md
 alwaysApply: true
 ---
 # Markdown Lint 规则
@@ -8,12 +8,6 @@ alwaysApply: true
 ## 描述
 
 此规则文件用于确保所有 Markdown 文档严格遵循 markdownlint 规范，提高文档质量和一致性。
-
-## 应用条件
-
-当处理以下类型的文件时应用此规则：
-
-- **/*.md
 
 ## 规则内容
 
