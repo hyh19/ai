@@ -1,9 +1,9 @@
 ---
 description: 确保所有需要绘制图表的需求使用 Mermaid 语法规范实现，提高文档中图表的一致性和可维护性
-globs: **/*.md
-alwaysApply: true
+globs: *.md
+alwaysApply: false
 ---
-<!-- 2025-03-27 更新 -->
+<!-- modified: 2025-03-27 -->
 # Mermaid 图表规范
 
 ## 描述

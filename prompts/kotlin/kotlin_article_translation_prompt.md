@@ -1,6 +1,6 @@
 ---
 description: 将 Kotlin 英文技术文章翻译成中文的指导规范，确保翻译的专业性、准确性和术语一致性
-globs: 
+globs:
 alwaysApply: false
 ---
 <!-- modified: 2025-03-27 -->
