@@ -3,6 +3,7 @@ description: 确保所有 Markdown 文档严格遵循 markdownlint 规范，提�
 globs: **/*.md
 alwaysApply: true
 ---
+<!-- 2025-03-27 更新 -->
 # Markdown Lint 规则
 
 ## 描述
