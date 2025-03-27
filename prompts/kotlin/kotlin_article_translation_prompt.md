@@ -3,7 +3,6 @@ description: 翻译 Kotlin 英文文章的指令
 globs:
 alwaysApply: false
 ---
-<!-- modified: 2025-03-27 19:46 -->
 # Kotlin 英文文章翻译指令
 
 ## 任务描述
@@ -117,3 +116,5 @@ alwaysApply: false
 | Jetpack | 直接使用 Jetpack |
 | Koin | 直接使用 Koin |
 | Maven | 直接使用 Maven |
+
+<!-- modified: 2025-03-28 -->
