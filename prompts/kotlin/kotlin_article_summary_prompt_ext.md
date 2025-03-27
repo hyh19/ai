@@ -1,8 +1,3 @@
----
-description: Kotlin 英文文章总结的附加规范，补充代码示例格式、思维导图排版要求和已完成示例参考
-globs: **/*.md
-alwaysApply: false
----
 # Kotlin 英文文章总结附加要求
 
 ## 代码示例标题格式

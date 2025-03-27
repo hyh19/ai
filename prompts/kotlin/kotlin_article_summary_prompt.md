@@ -1,8 +1,3 @@
----
-description: 生成 Kotlin 英文技术文章的结构化中文摘要，包含文字概述和思维导图，突出核心技术要点和逻辑框架
-globs: **/*.md
-alwaysApply: false
----
 # Kotlin 英文文章总结要求
 
 ## 任务描述
