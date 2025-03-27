@@ -116,5 +116,3 @@ alwaysApply: false
 | Jetpack | 直接使用 Jetpack |
 | Koin | 直接使用 Koin |
 | Maven | 直接使用 Maven |
-
-<!-- modified: 2025-03-28 -->
