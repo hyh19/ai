@@ -87,12 +87,7 @@ alwaysApply: false
 | Multiplatform | 多平台 |
 | Coroutine Context | 协程上下文 |
 | Dispatcher | 调度器 |
-| Continuation | 续体 |
 | Channel | 通道 |
-| StateFlow | 状态流 |
-| SharedFlow | 共享流 |
-| ViewModel | 视图模型 |
-| LiveData | 实时数据 |
 
 ### 保留原文术语
 
@@ -105,6 +100,11 @@ alwaysApply: false
 | Kotlin/JS | 直接使用 Kotlin/JS |
 | Kotlin/JVM | 直接使用 Kotlin/JVM |
 | Compose | 直接使用 Compose |
+| Continuation | 直接使用 Continuation |
+| StateFlow | 直接使用 StateFlow |
+| SharedFlow | 直接使用 SharedFlow |
+| ViewModel | 直接使用 ViewModel |
+| LiveData | 直接使用 LiveData |
 | Gradle | 直接使用 Gradle |
 | Kotlin DSL | 直接使用 Kotlin DSL |
 | KDoc | 直接使用 KDoc |
