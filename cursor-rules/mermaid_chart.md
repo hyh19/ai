@@ -1,6 +1,6 @@
 ---
-description: 确保所有图表绘制需求使用 Mermaid 语法规范实现
-globs: ["**/*.md"]
+description: 确保所有需要绘制图表的需求使用 Mermaid 语法规范实现，提高文档中图表的一致性和可维护性
+globs: **/*.md
 alwaysApply: true
 ---
 # Mermaid 图表规范
@@ -8,12 +8,6 @@ alwaysApply: true
 ## 描述
 
 此规则文件用于确保所有需要绘制图表的需求使用 Mermaid 语法规范实现，提高文档中图表的一致性、可维护性和可读性。
-
-## 应用条件
-
-当处理以下类型的文件时应用此规则：
-
-- **/*.md
 
 ## 规则内容
 
