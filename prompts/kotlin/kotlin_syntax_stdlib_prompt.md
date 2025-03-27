@@ -1,9 +1,9 @@
 ---
 description: 提供结构化的 Kotlin 语法特性与标准库 API 讲解模板，包含基础概念、用法详解、代码示例和最佳实践
-globs: **/*.md
+globs: 
 alwaysApply: false
-modified: 2025-03-27
 ---
+<!-- modified: 2025-03-27 -->
 # Kotlin 语法和标准库 API 讲解要求
 
 ## 目标
