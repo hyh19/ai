@@ -3,7 +3,7 @@ description: 指导 AI 将 Kotlin 英文技术文章翻译成专业、准确、�
 globs:
 alwaysApply: false
 ---
-<!-- modified: 2025-03-27 -->
+<!-- modified: 2025-03-27 19:37 -->
 # Kotlin 英文文章翻译指令
 
 ## 任务描述
