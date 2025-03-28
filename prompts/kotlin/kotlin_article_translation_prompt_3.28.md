@@ -1,5 +1,5 @@
 ---
-description: 翻译 Kotlin 英文文章的指令
+description: 翻译 Kotlin 英文文章
 globs:
 alwaysApply: false
 ---

@@ -1,5 +1,5 @@
 ---
-description: 
+description: 总结 Kotlin 英文文章
 globs: 
 alwaysApply: false
 ---
