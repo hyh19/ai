@@ -3,7 +3,6 @@ description:
 globs: 
 alwaysApply: false
 ---
-<!-- modified: 2025-03-27 21:00 -->
 # Kotlin 英文文章总结指令
 
 ## 任务描述
