@@ -3,7 +3,7 @@ description: 确保所有需要绘制图表的需求使用 Mermaid 语法规范�
 globs: 
 alwaysApply: false
 ---
-# Mermaid 图表规则
+# Mermaid 图表绘制规则
 
 ## 描述
 
