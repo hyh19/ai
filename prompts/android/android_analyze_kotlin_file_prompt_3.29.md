@@ -54,16 +54,28 @@ alwaysApply: false
   |-------|------|---------|------|
   | 方法1 | (param: Type) | ReturnType | 描述方法用途 |
 
-- **类 UML 图**：使用 Mermaid 语法为该类绘制 UML 类图
+- **类 UML 图**：使用 Mermaid 语法为该类绘制 UML 类图（父类在上，子类在下）
   
   ```mermaid
   classDiagram
+      ParentClass <|-- AnalyzedClass
+      AnalyzedClass <|-- ChildClass
+      
+      class ParentClass {
+          +parentProperty: Type
+          +parentMethod(): ReturnType
+      }
+      
       class AnalyzedClass {
           -privateProperty: Type
           +publicProperty: Type
           +publicMethod(param: Type): ReturnType
       }
-      AnalyzedClass --|> ParentClass
+      
+      class ChildClass {
+          +childProperty: Type
+          +childMethod(): ReturnType
+      }
   ```
 
 - **继承关系**：分析类的继承体系和实现的接口
@@ -99,7 +111,25 @@ alwaysApply: false
 
 - **参数与状态**：分析函数参数和内部状态管理
 - **重组行为**：分析函数的重组特性和优化措施
-- **UI 结构图**：绘制函数生成的 UI 组件层次结构
+- **UI 结构图**：使用 ASCII 树形图绘制函数生成的 UI 组件层次结构
+
+  ```plaintext
+  MainScreen/                       # 主屏幕容器，控制整体布局
+  ├── TopAppBar/                    # 顶部应用栏，显示标题和操作按钮
+  │   ├── Title/                    # 标题文本组件
+  │   └── ActionButtons/            # 操作按钮容器
+  ├── ContentArea/                  # 主要内容区域
+  │   ├── FilterSection/            # 筛选条件区域
+  │   │   ├── FilterChip1/          # 筛选选项1
+  │   │   └── FilterChip2/          # 筛选选项2
+  │   └── ItemsList/                # 列表容器
+  │       ├── ListItem1/            # 列表项1
+  │       └── ListItem2/            # 列表项2
+  └── BottomNavigation/             # 底部导航栏
+      ├── NavItem1/                 # 导航项1
+      └── NavItem2/                 # 导航项2
+  ```
+
 - **生命周期效应**：分析与生命周期相关的副作用处理
 
 #### 全局变量与常量分析
