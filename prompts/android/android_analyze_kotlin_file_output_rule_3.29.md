@@ -10,7 +10,7 @@ alwaysApply: false
 要求：
 
 - 新文件与 Kotlin 文件同目录
-- 新文件与 Kotlin 文件同名，后缀为 `.md`
+- 新文件与 Kotlin 文件同名，后缀为 `.md`。
 
 示例：
 
