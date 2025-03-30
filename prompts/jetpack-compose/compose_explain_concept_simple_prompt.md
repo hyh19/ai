@@ -1,9 +1,9 @@
 ---
-description: 讲解 Jetpack Compose 概念
+description: 通俗易懂地讲解 Jetpack Compose 概念
 globs: 
 alwaysApply: false
 ---
-# Jetpack Compose 概念讲解指令
+# 通俗易懂地讲解 Jetpack Compose 概念指令
 
 ## 任务描述
 
