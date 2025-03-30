@@ -1,4 +1,9 @@
-# 通俗易懂地讲解 Jetpack Compose 概念的指令
+---
+description: 讲解 Jetpack Compose 概念
+globs: 
+alwaysApply: false
+---
+# Jetpack Compose 概念讲解指令
 
 ## 任务描述
 
