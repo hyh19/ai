@@ -58,7 +58,7 @@
 - 避免使用未经解释的 Compose 专业术语
 - 当必须使用专业术语时，提供简明的解释
 - 考虑创建一个小型术语表，解释 Compose 相关的关键词汇
-- 解释与该概念相关的 Compose 特有术语（如 remember、derivedStateOf、LaunchedEffect 等）
+- 解释与该概念相关的 Compose 特有术语（如 `remember`、`derivedStateOf`、`LaunchedEffect` 等）
 
 ### 历史和发展
 
