@@ -1,9 +1,8 @@
 ---
-description: 确保所有中英文混合文档严格遵循统一的排版规范，提高文档的可读性和专业性
+description: 
 globs:
 alwaysApply: true
 ---
-<!-- modified: 2025-03-27 -->
 # 中文文案排版规范
 
 ## 描述

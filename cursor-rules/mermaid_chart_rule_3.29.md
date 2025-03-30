@@ -59,6 +59,6 @@ alwaysApply: false
 
 ## 参考资料
 
-- [Mermaid 官方文档](mdc:https:/mermaid-js.github.io/mermaid/#/)
+- [Mermaid 官方文档](mdc:https:/mermaid-js.github.io/mermaid/#)
 - [Mermaid 在线编辑器](mdc:https:/mermaid-js.github.io/mermaid-live-editor)
 - [Markdown 中使用 Mermaid 的最佳实践](mdc:https:/mermaid-js.github.io/mermaid/#/integrations)

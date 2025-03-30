@@ -1,9 +1,8 @@
 ---
-description: 确保所有 Markdown 文档严格遵循 markdownlint 规范，提高文档质量和一致性
-globs: *.md
-alwaysApply: false
+description: 
+globs: 
+alwaysApply: true
 ---
-<!-- modified: 2025-03-27 -->
 # Markdown Lint 规则
 
 ## 描述
