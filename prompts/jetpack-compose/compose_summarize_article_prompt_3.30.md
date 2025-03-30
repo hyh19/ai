@@ -93,4 +93,4 @@ flowchart LR
 2. 特别关注 Compose 的独特概念如重组（Recomposition）、单向数据流、副作用（Side-effects）等。
 3. 如文章包含与其他 Jetpack 库（如 Navigation、ViewModel 等）的集成内容，请单独总结这部分内容。
 4. 对于 Material Design 3 相关内容，请特别标注并详细总结。
-5. 代码示例应尽可能简洁但完整，确保表达核心概念的同时可以直接运行。 
+5. 代码示例应尽可能简洁但完整，确保表达核心概念的同时可以直接运行。
