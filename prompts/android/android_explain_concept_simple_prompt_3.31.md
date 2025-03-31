@@ -3,7 +3,7 @@ description: 通俗易懂地讲解 Android 概念
 globs: 
 alwaysApply: false
 ---
-# 通俗易懂地讲解 Android 概念指令
+# 通俗易懂地讲解 Android 概念
 
 ## 任务描述
 
