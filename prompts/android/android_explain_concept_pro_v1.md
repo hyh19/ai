@@ -13,6 +13,8 @@ alwaysApply: false
 
 假设你的解释对象是具有以下背景的专业开发者：
 
+- 刚开始学习 Kotlin 编程语言
+- 刚开始学习 Android 开发
 - 5 年以上 iOS 企业项目开发经验
 - 1 年 Flutter 企业项目开发经验
 - 1 年 Cocos2d-x 企业项目开发经验
